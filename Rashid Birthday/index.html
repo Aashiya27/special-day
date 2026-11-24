@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11142d">
+    <meta name="description" content="A little birthday adventure under the stars.">
+    <title>A Little Birthday Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="sky-glow" aria-hidden="true"></div>
+    <div class="site-shell">
+        <span class="visually-hidden" id="music-status" aria-live="polite"></span>
+        <header class="site-header">
+            <a class="brand" href="#" data-home aria-label="Return to the beginning">
+                <span class="brand-star" aria-hidden="true">✦</span>
+                <span>A little something</span>
+            </a>
+            <p class="header-note"><span aria-hidden="true">♡</span> made just for you</p>
+        </header>
+
+        <main id="experience">
+            <section class="screen welcome-screen is-active" data-screen="welcome" aria-labelledby="welcome-title">
+                <div class="welcome-copy">
+                    <p class="eyebrow"><span class="eyebrow-sparkle" aria-hidden="true">✧</span> A tiny birthday adventure</p>
+                    <p class="handwritten greeting">Hey, you...</p>
+                    <h1 id="welcome-title">I have something<br><span>special for you.</span></h1>
+                    <p class="lead">A little journey under the stars, made with a whole lot of love. Ready to see where it goes?</p>
+                    <button class="button button-primary" type="button" data-go="trailhead">
+                        Begin your journey <span aria-hidden="true">↗</span>
+                    </button>
+                    <p class="tiny-note"><span aria-hidden="true">☾</span> Best enjoyed with a little curiosity</p>
+                </div>
+                <div class="welcome-art" aria-label="A dreamy mountain view at sunset">
+                    <div class="art-frame">
+                        <img src="1149403136187890349.jpg" alt="A mountain peak glowing in a pink sunset">
+                        <span class="art-moon" aria-hidden="true">☾</span>
+                        <span class="art-caption">somewhere, a new memory awaits</span>
+                    </div>
+                    <span class="floating-star star-one" aria-hidden="true">✦</span>
+                    <span class="floating-star star-two" aria-hidden="true">✧</span>
+                    <span class="floating-heart" aria-hidden="true">♡</span>
+                </div>
+            </section>
+
+            <section class="screen trailhead-screen" data-screen="trailhead" aria-labelledby="trailhead-title" hidden>
+                <div class="trailhead-photo">
+                    <img src="Sunlit peaks through misty veils__A stunning view….jpg" alt="Sunlight spilling over misty mountain peaks">
+                    <span class="photo-tag"><span aria-hidden="true">🏔</span> your kind of place</span>
+                </div>
+                <div class="trailhead-copy">
+                    <p class="eyebrow"><span class="eyebrow-sparkle" aria-hidden="true">✧</span> The trail starts here</p>
+                    <p class="handwritten">For my favourite orophile</p>
+                    <h1 id="trailhead-title">A little mountain<br><span>quiz, just for you.</span></h1>
+                    <p class="lead">Five mountain questions, one secret little detour, and a birthday surprise waiting at the summit.</p>
+                    <div class="trail-facts" aria-label="Adventure details">
+                        <span><span aria-hidden="true">⛰</span> 5 mountain questions</span>
+                        <span><span aria-hidden="true">✨</span> 1 mystery to solve</span>
+                    </div>
+                    <button class="button button-primary" type="button" data-go="mountain-quiz">
+                        Let's hit the trail <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="screen quiz-screen" data-screen="mountain-quiz" aria-labelledby="quiz-title" hidden>
+                <div class="quiz-aside">
+                    <p class="eyebrow"><span class="eyebrow-sparkle" aria-hidden="true">✧</span> Your mountain moment</p>
+                    <div class="quiz-photo">
+                        <img src="1082552830398893016.jpg" alt="A quiet road winding through green mountain valleys">
+                        <span class="photo-caption">one question at a time ♡</span>
+                    </div>
+                    <p class="aside-note handwritten">No rush. The view is worth it.</p>
+                </div>
+                <div class="quiz-panel">
+                    <div class="progress-heading">
+                        <span class="eyebrow">THE MOUNTAIN TRAIL</span>
+                        <span class="question-count" id="question-count">Question 1 of 5</span>
+                    </div>
+                    <div class="progress-track" role="progressbar" aria-label="Mountain quiz progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1">
+                        <span class="progress-fill"></span>
+                    </div>
+                    <div id="question-content" aria-live="polite"></div>
+                </div>
+            </section>
+
+            <section class="screen secret-screen" data-screen="secret-intro" aria-labelledby="secret-title" hidden>
+                <div class="secret-card">
+                    <span class="secret-icon" aria-hidden="true">💌</span>
+                    <p class="eyebrow">A little pause on the trail</p>
+                    <p class="handwritten">Psst... a tiny secret</p>
+                    <h1 id="secret-title">Want to know what name<br>I saved your number as?</h1>
+                    <p class="lead">Answer three easy little questions and the mystery is yours. Then we'll pick up right where we left off.</p>
+                    <button class="button button-primary" type="button" data-go="secret-quiz">
+                        Tell me the secret! <span aria-hidden="true">♡</span>
+                    </button>
+                    <span class="secret-doodle" aria-hidden="true">✧</span>
+                </div>
+            </section>
+
+            <section class="screen quiz-screen secret-quiz-screen" data-screen="secret-quiz" aria-labelledby="secret-quiz-title" hidden>
+                <div class="quiz-aside secret-aside">
+                    <p class="eyebrow"><span class="eyebrow-sparkle" aria-hidden="true">✧</span> Secret side quest</p>
+                    <div class="quiz-photo">
+                        <img src="1092263715911343994.jpg" alt="A mountain lake beneath dramatic snowy peaks">
+                        <span class="photo-caption">three little clues to go</span>
+                    </div>
+                    <p class="aside-note handwritten">You've got this!</p>
+                </div>
+                <div class="quiz-panel">
+                    <div class="progress-heading">
+                        <span class="eyebrow">THE SECRET SIDE QUEST</span>
+                        <span class="question-count" id="secret-question-count">Question 1 of 3</span>
+                    </div>
+                    <div class="progress-track secret-progress" role="progressbar" aria-label="Secret quiz progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1">
+                        <span class="progress-fill"></span>
+                    </div>
+                    <div id="secret-question-content" aria-live="polite"></div>
+                </div>
+            </section>
+
+            <section class="screen reveal-screen" data-screen="name-reveal" aria-labelledby="name-title" hidden>
+                <div class="reveal-card">
+                    <span class="reveal-envelope" aria-hidden="true">💌</span>
+                    <p class="eyebrow">Mystery solved!</p>
+                    <p class="handwritten">Drumroll, please...</p>
+                    <h1 id="name-title">I've saved you as</h1>
+                    <p class="saved-name" id="saved-name"></p>
+                    <p class="lead">Hehe. Now, back to those mountain questions — your birthday surprise is just around the bend.</p>
+                    <button class="button button-primary" type="button" data-go="mountain-quiz">
+                        Back to the trail <span aria-hidden="true">⛰</span>
+                    </button>
+                    <span class="reveal-sparkle sparkle-left" aria-hidden="true">✧</span>
+                    <span class="reveal-sparkle sparkle-right" aria-hidden="true">✦</span>
+                </div>
+            </section>
+
+            <section class="screen summit-screen" data-screen="summit" aria-labelledby="summit-title" hidden>
+                <div class="summit-photo" aria-hidden="true"></div>
+                <div class="summit-copy">
+                    <p class="eyebrow"><span class="eyebrow-sparkle" aria-hidden="true">✧</span> You made it to the summit!</p>
+                    <p class="handwritten">One last little thing...</p>
+                    <h1 id="summit-title">Your birthday wishes<br>are waiting for you.</h1>
+                    <p class="lead">You've climbed all the way here. Ready to open the gift you've been waiting for?</p>
+                    <button class="button button-primary" id="open-gift" type="button">
+                        Open your birthday gift <span aria-hidden="true">🎁</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="screen birthday-screen" data-screen="birthday" aria-labelledby="birthday-title" hidden>
+                <div class="birthday-card">
+                    <span class="cake" aria-hidden="true">🎂</span>
+                    <p class="eyebrow">Today is all about you</p>
+                    <p class="handwritten">Happy birthday, <span data-friend-name>Rashid</span>!</p>
+                    <h1 id="birthday-title">Here's to another year<br>of <span>beautiful adventures.</span></h1>
+                    <p class="birthday-message" id="birthday-message"></p>
+                    <div class="birthday-signoff">Your friend, always <span aria-hidden="true">♡</span></div>
+                    <button class="button button-quiet" type="button" data-home>Take the journey again <span aria-hidden="true">↺</span></button>
+                </div>
+                <div class="confetti confetti-one" aria-hidden="true">✦</div>
+                <div class="confetti confetti-two" aria-hidden="true">✧</div>
+                <div class="confetti confetti-three" aria-hidden="true">♡</div>
+                <div class="confetti confetti-four" aria-hidden="true">✦</div>
+            </section>
+        </main>
+        <footer class="site-footer"><span aria-hidden="true">✦</span> a little memory in the making</footer>
+    </div>
+</body>
+</html>
